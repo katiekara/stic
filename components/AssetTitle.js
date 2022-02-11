@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   //   textAlign: 'center',
   // },
   logo: {
-    height: 90,
-    width: 90,
+    height: 200,
+    width: 300,
   }
 });
