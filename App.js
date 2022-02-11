@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, ImageBackground } from 'react-native';
+import { Text, View, StyleSheet, ImageBackground, Modal, ImageViewer } from 'react-native';
 import Constants from 'expo-constants';
 
 // You can import from local files
 import AssetExample from './components/AssetExample';
 import AssetTitle from './components/AssetTitle';
 import Linking from './components/Linking';
+import ModalComponent from './components/ModalComponent';
 
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
@@ -19,6 +20,7 @@ import image6 from './assets/icon-6.jpg';
 import image7 from './assets/icon-7.jpg';
 import imageTitle from './assets/title.jpg';
 import background from './assets/background.jpg';
+import zoom from './assets/zoom.jpg';
 
 export default function App() {
   return (
@@ -28,17 +30,17 @@ export default function App() {
           <AssetTitle icon={imageTitle} title="" />
         </View>
         <View style={styles.row}>
-          <AssetExample icon={image1} title="" />
-          <AssetExample icon={image2} title="" />
+          <ModalComponent icon={image1}/>
+          <ModalComponent icon={image2}/>
         </View>
         <View style={styles.row}>
-          <AssetExample icon={image3} title="" />
-          <AssetExample icon={image4} title="" />
-          <AssetExample icon={image5} title="" />
+          <ModalComponent icon={image3}/>
+          <ModalComponent icon={image4}/>
+          <ModalComponent icon={image5}/>
         </View>
           <View style={styles.row}>
-          <AssetExample icon={image6} title="" />
-          <AssetExample icon={image7} title="" />
+          <ModalComponent icon={image6}/>
+          <ModalComponent icon={image7}/>
         </View>
       </ImageBackground>      
     </View>
