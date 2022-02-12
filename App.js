@@ -36,11 +36,11 @@ export default function App() {
         <View style={styles.row}>
           <ModalComponent icon={image3}/>
           <ModalComponent icon={image4}/>
-          <ModalComponent icon={image5}/>
+          <ModalComponent icon={image5} url="https://us05web.zoom.us/j/9339939148?pwd=ampVVVRZMGkwem10Q3FJQVJvR3c1QT09" />
         </View>
           <View style={styles.row}>
           <ModalComponent icon={image6}/>
-          <ModalComponent icon={image7}/>
+          <ModalComponent icon={image7} url="https://www.instagram.com" />
         </View>
       </ImageBackground>      
     </View>
@@ -58,12 +58,6 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
     padding: 0,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
   row: {
     flexDirection: "row",

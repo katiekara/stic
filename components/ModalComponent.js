@@ -1,11 +1,29 @@
 import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View, Image } from "react-native";
+import { Alert, Modal, StyleSheet, Text, Pressable, View, Image, Linking } from "react-native";
 
 import zoomImage from '../assets/zoom.jpg';
 
 const App = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const { icon, title } = props;
+  const { icon, title, url } = props;
+
+  const handleIconPress = async () => {
+    if (url !== undefined) {
+      const isUrlSupported = await Linking.canOpenURL(url);
+
+      if (isUrlSupported) {
+        await Linking.openURL(url);
+      } else {
+        Alert.alert('This link is not supported by this device');
+      }
+    } else {
+      setModalVisible(true);
+    }
+
+
+    
+  }
+
   return (
     <View>
       <Modal
@@ -28,7 +46,7 @@ const App = (props) => {
         </View>
       </Modal>
       <Pressable
-        onPress={() => setModalVisible(true)}
+        onPress={handleIconPress}
       >
         <Image style={styles.logo} source={icon} />
       </Pressable>
